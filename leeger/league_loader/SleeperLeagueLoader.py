@@ -24,6 +24,13 @@ class SleeperLeagueLoader(LeagueLoader):
     Responsible for loading a League from Sleeper Fantasy Football.
     https://sleeper.com/
     """
+from leeger.league_loader import SleeperLeagueLoader
+from leeger.model.league import League
+
+if __name__ == '__main__':
+    # Get a League object with years 2019 and 2020 for Sleeper league with ID: "12345678".
+    sleeperLeagueLoader = SleeperLeagueLoader("791851018504732672", [2022])
+    league: League = sleeperLeagueLoader.loadLeague()
     __INVALID_SLEEPER_LEAGUE_IDS = [None, "0"]
 
     def __init__(self, mostRecentLeagueId: str, years: list[int], **kwargs):
